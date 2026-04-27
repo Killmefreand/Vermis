@@ -1,0 +1,24 @@
+{ 
+"id": "Vermis",
+"title": "Vermis - roll game",
+"description": "It is a system based on the Vermis art books.",
+"version": "1.0.1",
+
+"compatibility":
+{
+    "minimum":"14",
+    "verified": "14",
+    "maximum":"14"
+},
+    "authors":[
+    { "name": "Anti-Shower gel",
+       "discord": "antishowergel"
+
+    }],
+    "esmodules": ["scripts/hooks.mjs"],
+    "styles":["styles/styles.css"],
+    "documentTypes":
+    {"Actor":{"flesh": {"htmlFields":["biography"],"filePathFields":{"crest": ["IMAGE"]}},
+    "villain": {"htmlFields":["biography"],"filePathFields":{"crest": ["IMAGE"]}},
+    "pawn": {"htmlFields":["biography"],"filePathFields":{"crest": ["IMAGE"]}}}}
+}

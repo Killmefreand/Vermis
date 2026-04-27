@@ -1,0 +1,18 @@
+<section class="character-stats-bars">
+  {{#each statRows}}
+    <div class="stat-row">
+      <label class="stat-label">{{label}}</label>
+
+      <div class="stat-bar" data-stat="{{key}}" aria-label="{{label}}">
+        {{#each segments}}
+          <button
+            type="button"
+            class="stat-segment {{#if filled}}filled{{/if}}"
+            data-action="setStat"
+            data-value="{{value}}">
+          </button>
+        {{/each}}
+      </div>
+    </div>
+  {{/each}}
+</section>

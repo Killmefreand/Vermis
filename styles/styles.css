@@ -1,0 +1,196 @@
+ .flesh-sheet
+ {
+   display: flex;
+   flex-direction: column;
+   gap: 12px;   
+   
+ }
+.flesh-sheet input
+{
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  filter: none;
+  padding: 0;
+  margin: 0;
+}
+ .flesh-sheet input:is(:hover,:focus,:active,:focus-visible)
+{
+  background: transparent;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    filter: none;
+}
+ .actor-name
+ {
+  text-shadow: 3px 3px 10px darkblue,-1px -1px 10px red;
+ }
+ .xp-block {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px; 
+}
+ .xp-section
+ { width: 20%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 8px; 
+   
+ }
+ .xp input
+ {width: 60px;
+  text-align: center; }
+  .hp-bar
+  { border: 1px solid #999;
+    width: 30%;
+    height: 5%;
+    background-color: #30a852;
+    position: relative;
+    overflow: hidden;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+  .hp-fill
+  {
+    position: absolute;
+    inset: 0 auto 0 0;
+    height: 100%;
+    background: greenyellow;
+  }
+  .hp-content
+  {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+  input.hp-value{
+    width: 32px;
+    height: 100%;
+    text-align: right;
+    appearance: textfield;
+  }
+
+
+  .hp-max,.hp-separator
+  { padding: 0;
+    display: inline;
+  }
+ .xp-bar
+ {
+    position:relative;
+    width: 100%;
+    height: 18px;
+    border: 1px solid #999;
+    background: #2a2a2a;
+    border-radius: 30px;
+    overflow: hidden;
+    align-content: end;
+    }
+ .xp-fill
+ {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 55%;
+    background: gold;
+
+ }
+.xp-max
+{
+   text-align: right;
+   font-size: 12px;
+}
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.flesh-sheet .tab {
+  display: none;
+}
+
+.flesh-sheet .tab.active {
+  display: block;
+}
+
+.name-block {
+  flex: 1;
+}
+
+.actor-name {
+  width: 100%;
+  font-size: 28px;
+}
+
+.crest-block {
+  width: 120px;
+  margin-left: 12px;
+}
+
+.crest-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 1px solid #999;
+  cursor: pointer;
+}
+
+.character-stats-bars {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.stat-label {
+  text-align: right;
+  font-size: 18px;
+}
+
+.stat-bar {
+  position: relative;
+  height: 24px;
+  border: 1px solid #3d3322;
+  background: rgba(238, 228, 187, 0.45);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2px;
+  padding: 2px;
+  overflow: hidden;
+}
+
+.stat-segment {
+  min-width: 0;
+  border: 1px solid rgba(61, 51, 34, 0.75);
+  background: rgba(238, 228, 187, 0.55);
+  cursor: pointer;
+}
+
+.stat-segment.filled {
+  background: rgba(61, 51, 34, 0.78);
+}
+
+.stat-segment:is(:hover, :focus, :active, :focus-visible) {
+  outline: none;
+  box-shadow: none;
+}

@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "allowJs": true,
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "types": ["@league-of-foundry-developers/foundry-vtt-types"]
+  },
+  "include": ["**/*.js", "**/*.mjs"]
+}

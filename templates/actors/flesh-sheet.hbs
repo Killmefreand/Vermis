@@ -1,0 +1,70 @@
+
+<form class="flesh-sheet">
+  <div class="sheet-header">
+    <div class="name-block">
+        <h1 class="actor-name">{{actor.name}}</h1>
+
+        <input class="flash-name" type="text" name="name" value="{{actor.name}}" />
+
+    </div>
+  <div class="crest-block">
+    <img
+    class="crest-image"
+    src="{{#if system.crest}}{{system.crest}}{{else}}icons/svg/mystery-man.svg{{/if}}"
+    alt="{{actor.name}}"
+    data-edit="system.crest"
+    />
+  </div>
+  </div>
+
+
+
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item active" data-group="primary" data-tab="main">Main</a>
+    <a class="item" data-group="primary" data-tab="biography">Biography</a>
+  </nav>
+
+  <section class="sheet-body">
+    <div class="tab active" data-group="primary" data-tab="main">
+      {{> "systems/Vermis/templates/partials/character-stats-bars.hbs"}}
+
+      <div class="hp-bar">
+        <div class="hp-fill" style="width: {{system.resources.health.value}}0%;"></div>
+        <div class="hp-content">
+          <input class="hp-value"
+          type="number"
+          name="system.resources.health.value"
+          value="{{system.resources.health.value}}">
+          <span class="hp-separator"> / </span>
+          <span class="hp-max">{{system.resources.health.max}}</span>
+        </div>
+      </div>
+       
+       <div class="xp-block">
+    <div class="xp-section">
+      <label for= "xp">XP:</label>
+      <input type="number" 
+         class="xp-input"
+         name="system.resources.xp.value"
+         value="{{system.resources.xp.value}}"
+         id="xp"> 
+         </div>
+      <div class="xp-bar"> 
+         <div class="xp-fill"  
+         style="width: {{system.resources.xp.value}}%;"></div>
+         
+        
+         <span class="xp-max">{{system.resources.xp.max}}</span>
+      </div>
+       </div>
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="biography">
+      <section class="actor-biography-page">
+        <label>Biography</label>
+        <textarea name="system.biography">{{system.biography}}</textarea>
+      </section>
+    </div>
+  </section>
+
+</form> 
