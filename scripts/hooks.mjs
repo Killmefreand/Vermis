@@ -2,7 +2,7 @@
 
 import { SystemActor } from "./actors.mjs";
 import { SystemItem } from "./items.mjs";
-import { FleshSheet } from "./sheets/actors/FleshSheet.mjs";
+import { FleshSheet } from "./Actor-Sheet.mjs";
 import { HeroDataModel, PawnDataModel, VillainDataModel, WeaponDataModel } from "./MySystem.mjs";
 
 Hooks.once("init", async () => {

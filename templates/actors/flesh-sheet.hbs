@@ -29,7 +29,7 @@
       {{> "systems/Vermis/templates/partials/character-stats-bars.hbs"}}
 
       <div class="hp-bar">
-        <div class="hp-fill" style="width: {{resourceBars.health.percent}}%;"></div>
+        <div class="hp-fill" style="width: {{system.resources.health.value}}0%;"></div>
         <div class="hp-content">
           <input class="hp-value"
           type="number"
@@ -51,7 +51,7 @@
          </div>
       <div class="xp-bar"> 
          <div class="xp-fill"  
-         style="width: {{resourceBars.xp.percent}}%;"></div>
+         style="width: {{system.resources.xp.value}}%;"></div>
          
         
          <span class="xp-max">{{system.resources.xp.max}}</span>
