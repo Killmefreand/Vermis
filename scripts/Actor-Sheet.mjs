@@ -41,6 +41,9 @@ export class VermisActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     context.actor = this.actor;
     context.system = this.actor.system;
     context.statRows = this.#getStatRows(this.actor.system.stats);
+    context.resourceBars = {
+      health: this._getResourceBar(this.actor.system.resources?.health)
+    };
 
     return context;
   }
@@ -66,6 +69,18 @@ export class VermisActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     });
   }
 
+  _getResourceBar(resource = {}) {
+    const value = Number(resource.value ?? 0);
+    const max = Number(resource.max ?? 0);
+    const percent = max > 0 ? Math.clamp((value / max) * 100, 0, 100) : 0;
+
+    return {
+      value,
+      max,
+      percent
+    };
+  }
+
   static async #onSetStat(event, target) {
     const stat = target.closest(".stat-bar")?.dataset.stat;
     const value = Number(target.dataset.value);
@@ -76,10 +91,4 @@ export class VermisActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       [`system.stats.${stat}`]: value
     });
   }
-}
-
-export class FleshSheet extends VermisActorSheet {
-  static DEFAULT_OPTIONS = {
-    classes: ["flesh-sheet"]
-  };
 }
